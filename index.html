@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Osama B. Elnezamy | DPT, Clinical Researcher &amp; Data Analyst</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #151f32;
+      --surface-hover: #1e293b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --border: #26354d;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(11, 17, 32, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.4px;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4.5rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pill {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--primary);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 4.2vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 720px;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      padding: 0.72rem 1.35rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #0b1120;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    /* Stats Bar */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 1.15rem 1.25rem;
+      border-radius: 0.75rem;
+    }
+
+    .stat-num {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Section Header & Filters */
+    .section-header {
+      margin: 3.5rem 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.65rem;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.45rem 1rem;
+      border-radius: 0.5rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Project Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.85rem;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+      background: var(--surface-hover);
+    }
+
+    .card-category {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .tag {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.35rem;
+    }
+
+    .card-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    .card-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 5rem;
+      padding: 2.2rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">Osama<span>.Elnezamy</span></a>
+      <div class="nav-links">
+        <a href="#projects">Portfolio</a>
+        <a href="https://github.com/Osamabadran" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:oysama@gmail.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <span class="pill">Doctor of Physical Therapy · Data Analyst · Clinical Researcher</span>
+      <h1>Turning Clinical Evidence &amp; Raw Data Into <span>Actionable Impact.</span></h1>
+      <p>
+        Physical Therapist, clinical researcher, and healthcare data analyst bridging orthopedic and neurological
+        rehabilitation with systematic reviews, interactive Power BI analytics, and clear medical visual design.
+      </p>
+
+      <div class="btn-group">
+        <a href="#projects" class="btn btn-primary">Explore Featured Work</a>
+        <a href="assets/cv/Osama_Elnezamy_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV (PDF)</a>
+        <a href="https://github.com/Osamabadran" class="btn btn-outline" target="_blank" rel="noopener">GitHub Profile</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat-box">
+          <div class="stat-num">DPT · 3.92 GPA</div>
+          <div class="stat-label">Pharos University in Alexandria</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">Data &amp; BI</div>
+          <div class="stat-label">Excel · Power BI · DAX · SQL · Python</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">Evidence Synthesis</div>
+          <div class="stat-label">RevMan · Rayyan · PRISMA · Meta-Analysis</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-num">SciComm &amp; Design</div>
+          <div class="stat-label">PHIX Brand · MedComics · Infographics</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-header">
+        <h2>Featured Projects &amp; Case Studies</h2>
+        <div class="filters">
+          <button class="filter-btn active" onclick="filterProjects('all', this)">All Work</button>
+          <button class="filter-btn" onclick="filterProjects('data', this)">Data Analytics</button>
+          <button class="filter-btn" onclick="filterProjects('research', this)">Clinical &amp; Research</button>
+          <button class="filter-btn" onclick="filterProjects('design', this)">Design &amp; Branding</button>
+        </div>
+      </div>
+
+      <div class="grid" id="project-grid">
+        <!-- Data Analytics 1 -->
+        <article class="card" data-category="data">
+          <div>
+            <div class="card-category">Data Analytics &amp; Cloud</div>
+            <h3>Rehabilitation Outcomes Cloud Pipeline</h3>
+            <p>
+              End-to-end de-identified clinical data pipeline hosted on Azure SQL Database with statistical modeling
+              in Python and an interactive Power BI outcomes dashboard.
+            </p>
+          </div>
+          <div>
+            <div class="tags">
+              <span class="tag">Azure SQL</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Python</span>
+              <span class="tag">DAX</span>
+            </div>
+            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">View Repository &amp; Dashboard →</a>
+          </div>
+        </article>
+
+        <!-- Data Analytics 2 -->
+        <article class="card" data-category="data">
+          <div>
+            <div class="card-category">Data Analytics</div>
+            <h3>Olist E-Commerce ETL &amp; Executive Dashboard</h3>
+            <p>
+              Multi-table relational data model built in Power Query and Power Pivot with automated DAX KPIs for
+              regional revenue, delivery performance, and customer retention tracking.
+            </p>
+          </div>
+          <div>
+            <div class="tags">
+              <span class="tag">Microsoft Excel</span>
+              <span class="tag">Power Query</span>
+              <span class="tag">Power Pivot</span>
+              <span class="tag">DAX</span>
+            </div>
+            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">View Project Breakdown →</a>
+          </div>
+        </article>
+
+        <!-- Clinical & Research 1 -->
+        <article class="card" data-category="research">
+          <div>
+            <div class="card-category">Clinical Research</div>
+            <h3>Systematic Review &amp; Meta-Analysis Workflow</h3>
+            <p>
+              Literature screening in Rayyan, PRISMA 2020 flow diagram design, risk-of-bias evaluation, and
+              quantitative forest plot synthesis in orthopedic arthroplasty research.
+            </p>
+          </div>
+          <div>
+            <div class="tags">
+              <span class="tag">RevMan</span>
+              <span class="tag">Rayyan</span>
+              <span class="tag">PRISMA 2020</span>
+              <span class="tag">robvis</span>
+            </div>
+            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">Explore Research Workflow →</a>
+          </div>
+        </article>
+
+        <!-- Clinical & Research 2 -->
+        <article class="card" data-category="research">
+          <div>
+            <div class="card-category">Clinical Systems</div>
+            <h3>Standardized Digital SOAP &amp; Rehab Playbook</h3>
+            <p>
+              Structured clinical documentation framework organizing adult orthopedic, post-operative fracture, and
+              neurological patient assessments using SOAP and Golden Circle clinical reasoning.
+            </p>
+          </div>
+          <div>
+            <div class="tags">
+              <span class="tag">Orthopedics</span>
+              <span class="tag">Neurology</span>
+              <span class="tag">SOAP Logs</span>
+              <span class="tag">Clinical Reasoning</span>
+            </div>
+            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">Explore Clinical Framework →</a>
+          </div>
+        </article>
+
+        <!-- Design 1 -->
+        <article class="card" data-category="design">
+          <div>
+            <div class="card-category">Brand Identity</div>
+            <h3>PHIX Clinic Visual Identity ("Don't just treat it, PHIX it")</h3>
+            <p>
+              Complete healthcare branding system, custom vector logo engineering, color system, and clinical
+              communication assets built for a modern physical therapy brand.
+            </p>
+          </div>
+          <div>
+            <div class="tags">
+              <span class="tag">Brand Identity</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Vector Design</span>
+            </div>
+            <a href="#projects" class="card-link">Visual Showcase Coming Soon →</a>
+          </div>
+        </article>
+
+        <!-- Design 2 -->
+        <article class="card" data-category="design">
+          <div>
+            <div class="card-category">Medical Visual Communication</div>
+            <h3>MedComics &amp; Clinical Infographics</h3>
+            <p>
+              Illustrated clinical mnemonics and biomechanical analogies translating complex gait mechanics,
+              orthopedic signs, and peer-reviewed evidence into clear visual stories.
+            </p>
+          </div>
+          <div>
+            <div class="tags">
+              <span class="tag">MedComics</span>
+              <span class="tag">Infographics</span>
+              <span class="tag">Excalidraw</span>
+              <span class="tag">SciComm</span>
+            </div>
+            <a href="#projects" class="card-link">Visual Gallery Coming Soon →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Dr. Osama B. Elnezamy (O.B.E.) · Hosted on GitHub Pages &amp; Microsoft Azure Static Web Apps</p>
+    </footer>
+  </div>
+
+  <script>
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.card').forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
