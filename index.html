@@ -116,6 +116,7 @@
     }
 
     .hero-media {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,8 +128,7 @@
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
     }
 
-    .hero-motion,
-    .hero-static {
+    .hero-motion {
       display: block;
       width: 100%;
       height: 100%;
@@ -136,8 +136,41 @@
       object-fit: contain;
     }
 
-    .hero-static {
-      display: none;
+    .motion-control {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border: 1px solid rgba(248, 250, 252, 0.16);
+      border-radius: 50%;
+      background: rgba(11, 17, 32, 0.88);
+      color: #f8fafc;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .motion-control:hover {
+      background: rgba(30, 41, 59, 0.96);
+      border-color: rgba(56, 189, 248, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .motion-control:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+    }
+
+    .motion-control svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
     }
 
     .pill {
@@ -232,14 +265,6 @@
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
-      }
-
-      .hero-motion {
-        display: none;
-      }
-
-      .hero-static {
-        display: block;
       }
 
       .btn,
@@ -451,7 +476,7 @@
           <video class="hero-motion" autoplay muted loop playsinline poster="assets/images/design/obe-logo.png">
             <source src="assets/images/design/obe-motion.mp4" type="video/mp4" />
           </video>
-          <img class="hero-static" src="assets/images/design/obe-logo.png" alt="Osama Badran brand logo" />
+          <button class="motion-control" type="button" aria-label="Pause motion logo"></button>
         </div>
       </div>
     </section>
@@ -602,6 +627,69 @@
   </div>
 
   <script>
+    (function () {
+      const video = document.querySelector('.hero-motion');
+      const control = document.querySelector('.motion-control');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+      const icons = {
+        play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
+        pause: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>',
+        replay: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a7 7 0 1 1-6.7 9H3.2A9 9 0 1 0 12 3V1L7.5 5.5 12 10V7a5 5 0 1 1-4.6 3H5.2A7 7 0 0 1 12 5z"/></svg>'
+      };
+
+      function setControl(type, label) {
+        control.innerHTML = icons[type];
+        control.setAttribute('aria-label', label);
+      }
+
+      function updateControl() {
+        if (reducedMotion.matches && video.ended) {
+          setControl('replay', 'Replay motion logo');
+        } else if (video.paused) {
+          setControl('play', 'Play motion logo');
+        } else {
+          setControl('pause', 'Pause motion logo');
+        }
+      }
+
+      function configureMotion() {
+        video.loop = !reducedMotion.matches;
+
+        if (reducedMotion.matches) {
+          setControl('replay', 'Replay motion logo');
+        }
+
+        const playback = video.play();
+        if (playback && typeof playback.catch === 'function') {
+          playback.catch(updateControl);
+        }
+      }
+
+      control.addEventListener('click', function () {
+        if (reducedMotion.matches && (video.ended || video.currentTime >= video.duration - 0.05)) {
+          video.currentTime = 0;
+          video.play().catch(updateControl);
+        } else if (video.paused) {
+          video.play().catch(updateControl);
+        } else {
+          video.pause();
+        }
+      });
+
+      video.addEventListener('play', updateControl);
+      video.addEventListener('pause', updateControl);
+      video.addEventListener('ended', updateControl);
+
+      if (typeof reducedMotion.addEventListener === 'function') {
+        reducedMotion.addEventListener('change', configureMotion);
+      } else {
+        reducedMotion.addListener(configureMotion);
+      }
+
+      configureMotion();
+    })();
+
     function filterProjects(category, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
