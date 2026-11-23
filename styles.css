@@ -289,7 +289,8 @@ button {
 }
 
 .hero-masthead-copy {
-  max-width: 700px;
+  flex: 1;
+  max-width: 780px;
   min-width: 0;
 }
 
@@ -321,26 +322,73 @@ button {
 }
 
 .hero h1 {
-  font-size: clamp(2.1rem, 4.3vw, 3.35rem);
+  font-size: clamp(1.65rem, 3.3vw, 2.7rem);
   font-weight: 800;
-  line-height: 1.12;
+  line-height: 1.32;
   letter-spacing: -0.03em;
   color: var(--ink);
-  text-wrap: balance;
+}
+
+.hero-break {
+  display: inline;
 }
 
 .headline-accent {
+  position: relative;
+  display: inline-block;
   color: var(--maroon);
   white-space: nowrap;
-  background-image: linear-gradient(
-    transparent 76%,
-    rgba(242, 194, 46, 0.58) 76%,
-    rgba(242, 194, 46, 0.58) 93%,
-    transparent 93%
-  );
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
+
+.scribble {
+  position: absolute;
+  left: -3%;
+  bottom: -0.34em;
+  width: 106%;
+  height: 0.44em;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.scribble-fill {
+  fill: #F5C71A;
+}
+
+.scribble-reveal {
+  fill: none;
+  stroke: #FFFFFF;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 260;
+  stroke-dashoffset: 260;
+}
+
+.scribble-reveal.s2 {
+  stroke-width: 9;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+}
+
+.scribble-reveal.s3 {
+  stroke-width: 9;
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+}
+
+/* Word 1 ("Research"): snappy 3-pass Z-draw */
+.scribble-first .s1 { animation: scribble-sweep-1 0.19s cubic-bezier(0.22, 1, 0.36, 1) 0.45s both; }
+.scribble-first .s2 { animation: scribble-sweep-2 0.17s cubic-bezier(0.22, 1, 0.36, 1) 0.61s both; }
+.scribble-first .s3 { animation: scribble-sweep-3 0.15s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both; }
+
+/* Word 2 ("Practice"): draws right after "Research" finishes */
+.scribble-second .s1 { animation: scribble-sweep-1 0.19s cubic-bezier(0.22, 1, 0.36, 1) 1.02s both; }
+.scribble-second .s2 { animation: scribble-sweep-2 0.17s cubic-bezier(0.22, 1, 0.36, 1) 1.18s both; }
+.scribble-second .s3 { animation: scribble-sweep-3 0.15s cubic-bezier(0.22, 1, 0.36, 1) 1.32s both; }
+
+@keyframes scribble-sweep-1 { from { stroke-dashoffset: 260; } to { stroke-dashoffset: 0; } }
+@keyframes scribble-sweep-2 { from { stroke-dashoffset: 220; } to { stroke-dashoffset: 0; } }
+@keyframes scribble-sweep-3 { from { stroke-dashoffset: 160; } to { stroke-dashoffset: 0; } }
 
 /* Seamless, Background-less Animated O.B.E. Motion Emblem
    NOTE: No isolation, transform, or opacity on parent so mix-blend-mode: multiply
@@ -1071,13 +1119,15 @@ button {
   }
 }
 
+@media (max-width: 680px) {
+  .hero-break {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
   .container {
     padding: 0 1.15rem;
-  }
-
-  .headline-accent {
-    white-space: normal;
   }
 
   .pillars-grid,
