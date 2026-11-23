@@ -3,705 +3,525 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Osama Badran (Osama B. Elnezamy · O.B.E.) — Physical Therapy Intern, Clinical Researcher, Healthcare Data Analyst, and Medical Visual Educator."
+  />
+  <meta name="theme-color" content="#FAF5EA" />
   <link rel="icon" type="image/png" href="assets/images/design/obe-logo.png" />
-  <title>Dr. Osama B. Elnezamy | DPT, Clinical Researcher &amp; Data Analyst</title>
-  <style>
-    :root {
-      --bg: #0b1120;
-      --surface: #151f32;
-      --surface-hover: #1e293b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
-      --primary: #38bdf8;
-      --secondary: #818cf8;
-      --border: #26354d;
-    }
+  <title>Osama Badran (Osama B. Elnezamy) · Physical Therapy, Clinical Research &amp; Data Analytics</title>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-
-    /* Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(12px);
-      background: rgba(11, 17, 32, 0.85);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: var(--text);
-      text-decoration: none;
-      letter-spacing: -0.4px;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .brand-emblem {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      object-fit: cover;
-      border: 1px solid rgba(248, 250, 252, 0.18);
-      box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.4rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.92rem;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 4.5rem 0 3rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .hero-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.88fr);
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .hero-copy {
-      min-width: 0;
-    }
-
-    .hero-media {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 320px;
-      overflow: hidden;
-      border: 1px solid rgba(248, 250, 252, 0.12);
-      border-radius: 16px;
-      background: #f4edda;
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
-    }
-
-    .hero-motion {
-      display: block;
-      width: 100%;
-      height: 100%;
-      max-height: 420px;
-      object-fit: contain;
-    }
-
-    .motion-control {
-      position: absolute;
-      right: 12px;
-      bottom: 12px;
-      width: 38px;
-      height: 38px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      border: 1px solid rgba(248, 250, 252, 0.16);
-      border-radius: 50%;
-      background: rgba(11, 17, 32, 0.88);
-      color: #f8fafc;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
-      backdrop-filter: blur(8px);
-      cursor: pointer;
-      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-    }
-
-    .motion-control:hover {
-      background: rgba(30, 41, 59, 0.96);
-      border-color: rgba(56, 189, 248, 0.55);
-      transform: translateY(-1px);
-    }
-
-    .motion-control:focus-visible {
-      outline: 2px solid var(--primary);
-      outline-offset: 3px;
-    }
-
-    .motion-control svg {
-      width: 16px;
-      height: 16px;
-      fill: currentColor;
-    }
-
-    .pill {
-      display: inline-block;
-      background: rgba(56, 189, 248, 0.12);
-      color: var(--primary);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 0.3rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 4.2vw, 3.2rem);
-      line-height: 1.15;
-      margin-bottom: 1rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 span {
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 720px;
-      margin-bottom: 1.8rem;
-    }
-
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.85rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .btn {
-      padding: 0.72rem 1.35rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: transform 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #0b1120;
-    }
-
-    .btn-primary:hover {
-      opacity: 0.9;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-      background: var(--surface);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    /* Stats Bar */
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    @media (max-width: 800px) {
-      .hero-layout {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .hero-media {
-        min-height: 260px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .btn,
-      .nav-links a,
-      .card,
-      .filter-btn {
-        transition: none;
-      }
-    }
-
-    .stat-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      padding: 1.15rem 1.25rem;
-      border-radius: 0.75rem;
-    }
-
-    .stat-num {
-      font-size: 1.3rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.2rem;
-    }
-
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    /* Section Header & Filters */
-    .section-header {
-      margin: 3.5rem 0 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .section-header h2 {
-      font-size: 1.65rem;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .filter-btn {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 0.45rem 1rem;
-      border-radius: 0.5rem;
-      font-size: 0.86rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: rgba(56, 189, 248, 0.15);
-      color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    /* Project Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 0.85rem;
-      padding: 1.6rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: var(--primary);
-      background: var(--surface-hover);
-    }
-
-    .card-category {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .card h3 {
-      font-size: 1.18rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 0.93rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .tag {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.75rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 0.35rem;
-    }
-
-    .card-link {
-      color: var(--primary);
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      background: none;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    .card-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 5rem;
-      padding: 2.2rem 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-  </style>
+  <!-- Google Fonts: Plus Jakarta Sans (UI/Headings), Newsreader (Editorial Bio), Cairo (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="logo">
-        <img class="brand-emblem" src="assets/images/design/obe-logo.png" alt="" />
-        <span>Osama.Badran</span>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Sticky Editorial Navigation -->
+  <header class="site-header" id="top">
+    <nav class="nav-inner container" aria-label="Primary navigation">
+      <a href="#top" class="brand" aria-label="Osama Badran home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/images/design/obe-logo.png" alt="" width="42" height="42" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Osama Badran</span>
+          <span class="brand-sub">O.B.E. · Clinical &amp; Data</span>
+        </span>
       </a>
-      <div class="nav-links">
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-nav-links"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <div class="nav-links" id="primary-nav-links">
+        <a href="#about">About</a>
         <a href="#projects">Portfolio</a>
-        <a href="https://github.com/Osamabadran" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:oysama@gmail.com">Contact</a>
+        <a
+          href="https://t.me/PT_3nakib"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-link-telegram"
+          aria-label="PT عناكب Telegram Channel (opens in new tab)"
+        >
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.93 4.65c.22-.94-.35-1.31-.97-1.08L2.63 10.64c-.91.36-.9.88-.17 1.11l4.7 1.47 10.9-6.88c.51-.31.99-.14.6.2l-8.83 7.97-.33 4.86c.48 0 .7-.22.97-.48l2.33-2.26 4.84 3.57c.89.49 1.53.24 1.75-.82l3.14-14.69z" />
+          </svg>
+          <span>PT <bdi class="ar-text" lang="ar" dir="rtl">عناكب</bdi></span>
+        </a>
+        <a href="https://github.com/Osamabadran" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/osama-b-elnezamy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:oysama@gmail.com" class="nav-link-cta">Contact</a>
       </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- Editorial Hero & Profile Section -->
+    <section class="hero" id="about" aria-labelledby="hero-heading">
+      <div class="container">
+        <!-- Editorial Masthead Row with Seamless Compact Animated O.B.E. Emblem -->
+        <div class="hero-masthead">
+          <div class="hero-masthead-copy">
+            <div class="eyebrow-row">
+              <span class="eyebrow-pill">
+                <span class="eyebrow-dot" aria-hidden="true"></span>
+                Physical Therapy Intern · B.Sc. in Physical Therapy (PUA, Honors)
+              </span>
+            </div>
+            <h1 id="hero-heading">
+              Turning Clinical Evidence &amp; Raw Data Into
+              <span class="headline-accent">Actionable Impact.</span>
+            </h1>
+          </div>
+
+          <div class="hero-emblem-lockup">
+            <button
+              type="button"
+              class="obe-motion-trigger"
+              data-state="playing"
+              aria-label="Pause O.B.E. animated brand emblem"
+              aria-pressed="false"
+              title="Click to pause or play O.B.E. emblem"
+            >
+              <video
+                class="obe-motion-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="assets/images/design/obe-logo.png"
+              >
+                <source src="assets/images/design/obe-motion.mp4" type="video/mp4" />
+              </video>
+              <span class="obe-motion-hint" aria-hidden="true">Pause</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Personal Portrait + Editorial Serif Bio Spread -->
+        <div class="profile-spread">
+          <figure class="portrait-frame">
+            <div class="portrait-wrap">
+              <img
+                src="assets/images/osama-profile.jpg"
+                alt="Portrait of Osama Badran (Osama B. Elnezamy) studying clinical literature"
+                class="portrait-img"
+                width="696"
+                height="928"
+                loading="eager"
+              />
+            </div>
+            <figcaption class="portrait-caption">
+              <span class="caption-primary">Osama Badran</span>
+              <span class="caption-meta">Academic: Osama B. Elnezamy · Alexandria, Egypt</span>
+            </figcaption>
+          </figure>
+
+          <div class="bio-column">
+            <p class="bio-kicker">Editorial Profile</p>
+            <div class="editorial-bio">
+              <p class="bio-lead">
+                I’m <strong>Osama Badran</strong> — publishing academically as <em>Osama B. Elnezamy</em> — a
+                <strong>Physical Therapy Intern</strong> holding a <strong>B.Sc. in Physical Therapy</strong> with
+                Honors (3.92 GPA) from Pharos University in Alexandria.
+              </p>
+              <p>
+                My work sits at the intersection of bedside care, rigorous research, and analytical clarity. I combine
+                hands-on <strong>orthopedic &amp; neurological rehabilitation</strong> with
+                <strong>clinical research &amp; evidence synthesis</strong> (systematic reviews and meta-analyses),
+                <strong>healthcare data analytics</strong> using Excel, Power BI, DAX, SQL, and R, and
+                <strong>visual rehab education</strong> through <em>O.B.E.™ MedComics</em> and clinical mind maps.
+              </p>
+            </div>
+
+            <ul class="pillar-tags" aria-label="Core professional pillars">
+              <li>Orthopedic &amp; Neuro Rehab</li>
+              <li>Systematic Reviews &amp; Meta-Analysis</li>
+              <li>Excel · Power BI · DAX · SQL · R</li>
+              <li>O.B.E.™ MedComics &amp; Mind Maps</li>
+            </ul>
+
+            <div class="cta-group">
+              <a href="#projects" class="btn btn-primary">
+                <span>Explore Work</span>
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12h14m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="assets/cv/Osama_Elnezamy_CV.pdf"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span>Download CV (PDF)</span>
+              </a>
+              <a
+                href="https://t.me/PT_3nakib"
+                class="btn btn-telegram"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open PT عناكب Telegram channel (opens in new tab)"
+              >
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.93 4.65c.22-.94-.35-1.31-.97-1.08L2.63 10.64c-.91.36-.9.88-.17 1.11l4.7 1.47 10.9-6.88c.51-.31.99-.14.6.2l-8.83 7.97-.33 4.86c.48 0 .7-.22.97-.48l2.33-2.26 4.84 3.57c.89.49 1.53.24 1.75-.82l3.14-14.69z" />
+                </svg>
+                <span>PT <bdi class="ar-text" lang="ar" dir="rtl">عناكب</bdi></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Four Core Pillars / Credentials Strip -->
+        <div class="pillars-grid" aria-label="Academic and clinical highlights">
+          <div class="pillar-card">
+            <span class="pillar-index">01</span>
+            <h2 class="pillar-title">B.Sc. PT · 3.92 GPA</h2>
+            <p class="pillar-desc">Physical Therapy Intern · Pharos University in Alexandria (Honors)</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-index">02</span>
+            <h2 class="pillar-title">Evidence Synthesis</h2>
+            <p class="pillar-desc">Systematic Reviews · Meta-Analysis · RevMan · Rayyan · PRISMA</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-index">03</span>
+            <h2 class="pillar-title">Healthcare Analytics</h2>
+            <p class="pillar-desc">Excel · Power BI · DAX · SQL · R · Clinical Outcomes Modeling</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-index">04</span>
+            <h2 class="pillar-title">Visual Education</h2>
+            <p class="pillar-desc">O.B.E.™ MedComics · Clinical Mind Maps · PHIX Brand System</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Telegram Channel Banner: PT عناكب -->
+    <section class="channel-section" id="pt-3nakib" aria-labelledby="channel-heading">
+      <div class="container">
+        <div class="channel-card">
+          <div class="channel-accent-bar" aria-hidden="true"></div>
+          <div class="channel-body">
+            <div class="channel-content">
+              <div class="channel-meta">
+                <span class="channel-badge">
+                  <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M21.93 4.65c.22-.94-.35-1.31-.97-1.08L2.63 10.64c-.91.36-.9.88-.17 1.11l4.7 1.47 10.9-6.88c.51-.31.99-.14.6.2l-8.83 7.97-.33 4.86c.48 0 .7-.22.97-.48l2.33-2.26 4.84 3.57c.89.49 1.53.24 1.75-.82l3.14-14.69z" />
+                  </svg>
+                  Featured Telegram Archive
+                </span>
+                <span class="channel-handle">@PT_3nakib</span>
+              </div>
+
+              <h2 id="channel-heading" class="channel-title">
+                PT <bdi class="ar-display" lang="ar" dir="rtl">عناكب</bdi>
+                <span class="channel-title-sub">— Clinical Sketches &amp; Rehab Knowledge Hub</span>
+              </h2>
+
+              <p class="channel-description">
+                A dedicated Telegram archive gathering my hand-crafted clinical sketches, college &amp;
+                post-graduation summaries, structured mind maps, and practical bedside clinical notes — built to help
+                physical therapy students and clinicians connect theory directly to patient care.
+              </p>
+
+              <ul class="channel-highlights">
+                <li>Clinical Sketches &amp; Mnemonics</li>
+                <li>College &amp; Post-Grad Summaries</li>
+                <li>Structured Mind Maps</li>
+                <li>Practical Clinical Notes</li>
+              </ul>
+            </div>
+
+            <div class="channel-action">
+              <a
+                href="https://t.me/PT_3nakib"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary btn-channel"
+              >
+                <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M21.93 4.65c.22-.94-.35-1.31-.97-1.08L2.63 10.64c-.91.36-.9.88-.17 1.11l4.7 1.47 10.9-6.88c.51-.31.99-.14.6.2l-8.83 7.97-.33 4.86c.48 0 .7-.22.97-.48l2.33-2.26 4.84 3.57c.89.49 1.53.24 1.75-.82l3.14-14.69z" />
+                </svg>
+                <span>Open PT <bdi class="ar-text" lang="ar" dir="rtl">عناكب</bdi></span>
+                <svg class="icon-svg icon-ext" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7m0 0H8m9 0v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <span class="channel-footnote">Free public channel · Opens in Telegram</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filterable Portfolio Grid -->
+    <section class="portfolio-section" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-heading-group">
+            <p class="section-kicker">Selected Portfolio</p>
+            <h2 id="projects-heading">Featured Projects &amp; Case Studies</h2>
+          </div>
+
+          <div class="filters" role="group" aria-label="Filter projects by category">
+            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">
+              All Work
+            </button>
+            <button type="button" class="filter-btn" data-filter="data" aria-pressed="false">
+              Data Analytics
+            </button>
+            <button type="button" class="filter-btn" data-filter="research" aria-pressed="false">
+              Clinical &amp; Research
+            </button>
+            <button type="button" class="filter-btn" data-filter="design" aria-pressed="false">
+              Design &amp; Branding
+            </button>
+          </div>
+        </div>
+
+        <p class="project-count" id="project-count" aria-live="polite">
+          Showing 6 of 6 featured works
+        </p>
+
+        <div class="project-grid" id="project-grid">
+          <!-- Data Analytics 1 -->
+          <article class="project-card" data-category="data">
+            <div class="card-top">
+              <div class="card-meta-row">
+                <span class="card-category">Data Analytics &amp; Cloud</span>
+                <span class="card-num">01</span>
+              </div>
+              <h3>Rehabilitation Outcomes Cloud Pipeline</h3>
+              <p>
+                End-to-end de-identified clinical data pipeline hosted on SQL infrastructure with statistical modeling
+                and an interactive Power BI outcomes dashboard built for tracking functional recovery.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <div class="tags">
+                <span class="tag">SQL</span>
+                <span class="tag">Power BI</span>
+                <span class="tag">DAX</span>
+                <span class="tag">R / Python</span>
+              </div>
+              <a
+                href="https://github.com/Osamabadran"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-link"
+              >
+                <span>View Repository &amp; Dashboard</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Data Analytics 2 -->
+          <article class="project-card" data-category="data">
+            <div class="card-top">
+              <div class="card-meta-row">
+                <span class="card-category">Data Analytics</span>
+                <span class="card-num">02</span>
+              </div>
+              <h3>Olist E-Commerce ETL &amp; Executive Dashboard</h3>
+              <p>
+                Multi-table relational data model built in Power Query and Power Pivot with automated DAX KPIs for
+                regional revenue, delivery performance, and customer retention tracking.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <div class="tags">
+                <span class="tag">Microsoft Excel</span>
+                <span class="tag">Power Query</span>
+                <span class="tag">Power Pivot</span>
+                <span class="tag">DAX</span>
+              </div>
+              <a
+                href="https://github.com/Osamabadran"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-link"
+              >
+                <span>View Project Breakdown</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Clinical & Research 1 -->
+          <article class="project-card" data-category="research">
+            <div class="card-top">
+              <div class="card-meta-row">
+                <span class="card-category">Clinical Research</span>
+                <span class="card-num">03</span>
+              </div>
+              <h3>Systematic Review &amp; Meta-Analysis Workflow</h3>
+              <p>
+                Literature screening in Rayyan, PRISMA 2020 flow diagram design, risk-of-bias evaluation, and
+                quantitative forest plot synthesis in orthopedic arthroplasty research.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <div class="tags">
+                <span class="tag">RevMan</span>
+                <span class="tag">Rayyan</span>
+                <span class="tag">PRISMA 2020</span>
+                <span class="tag">robvis</span>
+              </div>
+              <a
+                href="https://github.com/Osamabadran"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-link"
+              >
+                <span>Explore Research Workflow</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Clinical & Research 2 -->
+          <article class="project-card" data-category="research">
+            <div class="card-top">
+              <div class="card-meta-row">
+                <span class="card-category">Clinical Systems</span>
+                <span class="card-num">04</span>
+              </div>
+              <h3>Standardized Digital SOAP &amp; Rehab Playbook</h3>
+              <p>
+                Structured clinical documentation framework organizing adult orthopedic, post-operative fracture, and
+                neurological patient assessments using SOAP and Golden Circle clinical reasoning.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <div class="tags">
+                <span class="tag">Orthopedics</span>
+                <span class="tag">Neurology</span>
+                <span class="tag">SOAP Logs</span>
+                <span class="tag">Clinical Reasoning</span>
+              </div>
+              <a
+                href="https://github.com/Osamabadran"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-link"
+              >
+                <span>Explore Clinical Framework</span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- Design 1 -->
+          <article class="project-card" data-category="design">
+            <div class="card-top">
+              <div class="card-meta-row">
+                <span class="card-category">Brand Identity</span>
+                <span class="card-num">05</span>
+              </div>
+              <h3>PHIX Clinic Visual Identity ("Don't just treat it, PHIX it")</h3>
+              <p>
+                Complete healthcare branding system, custom vector logo engineering, color system, and clinical
+                communication assets built for a modern physical therapy brand.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <div class="tags">
+                <span class="tag">Brand Identity</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Canva</span>
+                <span class="tag">Vector Design</span>
+              </div>
+              <span class="card-status">Visual Showcase Coming Soon</span>
+            </div>
+          </article>
+
+          <!-- Design 2 -->
+          <article class="project-card" data-category="design">
+            <div class="card-top">
+              <div class="card-meta-row">
+                <span class="card-category">Visual Rehab Education</span>
+                <span class="card-num">06</span>
+              </div>
+              <h3>O.B.E.™ MedComics &amp; Clinical Mind Maps</h3>
+              <p>
+                Illustrated clinical mnemonics, biomechanical analogies, and concise mind maps translating complex
+                gait mechanics, orthopedic signs, and peer-reviewed evidence into clear visual stories.
+              </p>
+            </div>
+            <div class="card-bottom">
+              <div class="tags">
+                <span class="tag">MedComics</span>
+                <span class="tag">Mind Maps</span>
+                <span class="tag">Excalidraw</span>
+                <span class="tag">SciComm</span>
+              </div>
+              <a
+                href="https://t.me/PT_3nakib"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-link"
+              >
+                <span>Browse Archive on PT <bdi class="ar-text" lang="ar" dir="rtl">عناكب</bdi></span>
+                <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links" aria-label="Connect links">
+        <a href="mailto:oysama@gmail.com">oysama@gmail.com</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://github.com/Osamabadran" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="https://www.linkedin.com/in/osama-b-elnezamy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a
+          href="https://t.me/PT_3nakib"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-telegram"
+        >
+          <svg class="icon-svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21.93 4.65c.22-.94-.35-1.31-.97-1.08L2.63 10.64c-.91.36-.9.88-.17 1.11l4.7 1.47 10.9-6.88c.51-.31.99-.14.6.2l-8.83 7.97-.33 4.86c.48 0 .7-.22.97-.48l2.33-2.26 4.84 3.57c.89.49 1.53.24 1.75-.82l3.14-14.69z" />
+          </svg>
+          <span>PT <bdi class="ar-text" lang="ar" dir="rtl">عناكب</bdi></span>
+        </a>
+        <span class="footer-sep" aria-hidden="true">·</span>
+        <a href="assets/cv/Osama_Elnezamy_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+      </div>
+      <p class="footer-copy">
+        © 2026 Osama Badran (Osama B. Elnezamy · O.B.E.) · Hosted on GitHub Pages
+      </p>
     </div>
-  </nav>
+  </footer>
 
-  <div class="container">
-    <section class="hero">
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <span class="pill">Doctor of Physical Therapy · Data Analyst · Clinical Researcher</span>
-          <h1>Turning Clinical Evidence &amp; Raw Data Into <span>Actionable Impact.</span></h1>
-          <p>
-            Physical Therapist, clinical researcher, and healthcare data analyst bridging orthopedic and neurological
-            rehabilitation with systematic reviews, interactive Power BI analytics, and clear medical visual design.
-          </p>
-
-          <div class="btn-group">
-            <a href="#projects" class="btn btn-primary">Explore Featured Work</a>
-            <a href="assets/cv/Osama_Elnezamy_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV (PDF)</a>
-            <a href="https://github.com/Osamabadran" class="btn btn-outline" target="_blank" rel="noopener">GitHub Profile</a>
-          </div>
-
-          <div class="stats">
-            <div class="stat-box">
-              <div class="stat-num">DPT · 3.92 GPA</div>
-              <div class="stat-label">Pharos University in Alexandria</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">Data &amp; BI</div>
-              <div class="stat-label">Excel · Power BI · DAX · SQL · Python</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">Evidence Synthesis</div>
-              <div class="stat-label">RevMan · Rayyan · PRISMA · Meta-Analysis</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-num">SciComm &amp; Design</div>
-              <div class="stat-label">PHIX Brand · MedComics · Infographics</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-media">
-          <video class="hero-motion" autoplay muted loop playsinline poster="assets/images/design/obe-logo.png">
-            <source src="assets/images/design/obe-motion.mp4" type="video/mp4" />
-          </video>
-          <button class="motion-control" type="button" aria-label="Pause motion logo"></button>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-header">
-        <h2>Featured Projects &amp; Case Studies</h2>
-        <div class="filters">
-          <button class="filter-btn active" onclick="filterProjects('all', this)">All Work</button>
-          <button class="filter-btn" onclick="filterProjects('data', this)">Data Analytics</button>
-          <button class="filter-btn" onclick="filterProjects('research', this)">Clinical &amp; Research</button>
-          <button class="filter-btn" onclick="filterProjects('design', this)">Design &amp; Branding</button>
-        </div>
-      </div>
-
-      <div class="grid" id="project-grid">
-        <!-- Data Analytics 1 -->
-        <article class="card" data-category="data">
-          <div>
-            <div class="card-category">Data Analytics &amp; Cloud</div>
-            <h3>Rehabilitation Outcomes Cloud Pipeline</h3>
-            <p>
-              End-to-end de-identified clinical data pipeline hosted on Azure SQL Database with statistical modeling
-              in Python and an interactive Power BI outcomes dashboard.
-            </p>
-          </div>
-          <div>
-            <div class="tags">
-              <span class="tag">Azure SQL</span>
-              <span class="tag">Power BI</span>
-              <span class="tag">Python</span>
-              <span class="tag">DAX</span>
-            </div>
-            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">View Repository &amp; Dashboard →</a>
-          </div>
-        </article>
-
-        <!-- Data Analytics 2 -->
-        <article class="card" data-category="data">
-          <div>
-            <div class="card-category">Data Analytics</div>
-            <h3>Olist E-Commerce ETL &amp; Executive Dashboard</h3>
-            <p>
-              Multi-table relational data model built in Power Query and Power Pivot with automated DAX KPIs for
-              regional revenue, delivery performance, and customer retention tracking.
-            </p>
-          </div>
-          <div>
-            <div class="tags">
-              <span class="tag">Microsoft Excel</span>
-              <span class="tag">Power Query</span>
-              <span class="tag">Power Pivot</span>
-              <span class="tag">DAX</span>
-            </div>
-            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">View Project Breakdown →</a>
-          </div>
-        </article>
-
-        <!-- Clinical & Research 1 -->
-        <article class="card" data-category="research">
-          <div>
-            <div class="card-category">Clinical Research</div>
-            <h3>Systematic Review &amp; Meta-Analysis Workflow</h3>
-            <p>
-              Literature screening in Rayyan, PRISMA 2020 flow diagram design, risk-of-bias evaluation, and
-              quantitative forest plot synthesis in orthopedic arthroplasty research.
-            </p>
-          </div>
-          <div>
-            <div class="tags">
-              <span class="tag">RevMan</span>
-              <span class="tag">Rayyan</span>
-              <span class="tag">PRISMA 2020</span>
-              <span class="tag">robvis</span>
-            </div>
-            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">Explore Research Workflow →</a>
-          </div>
-        </article>
-
-        <!-- Clinical & Research 2 -->
-        <article class="card" data-category="research">
-          <div>
-            <div class="card-category">Clinical Systems</div>
-            <h3>Standardized Digital SOAP &amp; Rehab Playbook</h3>
-            <p>
-              Structured clinical documentation framework organizing adult orthopedic, post-operative fracture, and
-              neurological patient assessments using SOAP and Golden Circle clinical reasoning.
-            </p>
-          </div>
-          <div>
-            <div class="tags">
-              <span class="tag">Orthopedics</span>
-              <span class="tag">Neurology</span>
-              <span class="tag">SOAP Logs</span>
-              <span class="tag">Clinical Reasoning</span>
-            </div>
-            <a href="https://github.com/Osamabadran" target="_blank" rel="noopener" class="card-link">Explore Clinical Framework →</a>
-          </div>
-        </article>
-
-        <!-- Design 1 -->
-        <article class="card" data-category="design">
-          <div>
-            <div class="card-category">Brand Identity</div>
-            <h3>PHIX Clinic Visual Identity ("Don't just treat it, PHIX it")</h3>
-            <p>
-              Complete healthcare branding system, custom vector logo engineering, color system, and clinical
-              communication assets built for a modern physical therapy brand.
-            </p>
-          </div>
-          <div>
-            <div class="tags">
-              <span class="tag">Brand Identity</span>
-              <span class="tag">Figma</span>
-              <span class="tag">Canva</span>
-              <span class="tag">Vector Design</span>
-            </div>
-            <a href="#projects" class="card-link">Visual Showcase Coming Soon →</a>
-          </div>
-        </article>
-
-        <!-- Design 2 -->
-        <article class="card" data-category="design">
-          <div>
-            <div class="card-category">Medical Visual Communication</div>
-            <h3>MedComics &amp; Clinical Infographics</h3>
-            <p>
-              Illustrated clinical mnemonics and biomechanical analogies translating complex gait mechanics,
-              orthopedic signs, and peer-reviewed evidence into clear visual stories.
-            </p>
-          </div>
-          <div>
-            <div class="tags">
-              <span class="tag">MedComics</span>
-              <span class="tag">Infographics</span>
-              <span class="tag">Excalidraw</span>
-              <span class="tag">SciComm</span>
-            </div>
-            <a href="#projects" class="card-link">Visual Gallery Coming Soon →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2026 Dr. Osama B. Elnezamy (O.B.E.) · Hosted on GitHub Pages &amp; Microsoft Azure Static Web Apps</p>
-    </footer>
-  </div>
-
-  <script>
-    (function () {
-      const video = document.querySelector('.hero-motion');
-      const control = document.querySelector('.motion-control');
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-      const icons = {
-        play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>',
-        pause: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>',
-        replay: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a7 7 0 1 1-6.7 9H3.2A9 9 0 1 0 12 3V1L7.5 5.5 12 10V7a5 5 0 1 1-4.6 3H5.2A7 7 0 0 1 12 5z"/></svg>'
-      };
-
-      function setControl(type, label) {
-        control.innerHTML = icons[type];
-        control.setAttribute('aria-label', label);
-      }
-
-      function updateControl() {
-        if (reducedMotion.matches && video.ended) {
-          setControl('replay', 'Replay motion logo');
-        } else if (video.paused) {
-          setControl('play', 'Play motion logo');
-        } else {
-          setControl('pause', 'Pause motion logo');
-        }
-      }
-
-      function configureMotion() {
-        video.loop = !reducedMotion.matches;
-
-        if (reducedMotion.matches) {
-          setControl('replay', 'Replay motion logo');
-        }
-
-        const playback = video.play();
-        if (playback && typeof playback.catch === 'function') {
-          playback.catch(updateControl);
-        }
-      }
-
-      control.addEventListener('click', function () {
-        if (reducedMotion.matches && (video.ended || video.currentTime >= video.duration - 0.05)) {
-          video.currentTime = 0;
-          video.play().catch(updateControl);
-        } else if (video.paused) {
-          video.play().catch(updateControl);
-        } else {
-          video.pause();
-        }
-      });
-
-      video.addEventListener('play', updateControl);
-      video.addEventListener('pause', updateControl);
-      video.addEventListener('ended', updateControl);
-
-      if (typeof reducedMotion.addEventListener === 'function') {
-        reducedMotion.addEventListener('change', configureMotion);
-      } else {
-        reducedMotion.addListener(configureMotion);
-      }
-
-      configureMotion();
-    })();
-
-    function filterProjects(category, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      document.querySelectorAll('.card').forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
