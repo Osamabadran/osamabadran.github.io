@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Project case study by Osama B. Elnezamy (O.B.E.) — Physical Therapy, Clinical Research &amp; Healthcare Data Analytics."
+  />
+  <meta name="theme-color" content="#FAF5EA" />
+  <link rel="icon" type="image/png" href="../assets/images/design/obe-logo.png" />
+  <title>Case Study Template · Osama B. Elnezamy (O.B.E.)</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans (UI/Headings), Newsreader (Editorial Body), Cairo (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    .case-study-main {
+      padding: 3rem 0 4.5rem;
+    }
+
+    .case-study-shell {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--maroon);
+      text-decoration: none;
+      margin-bottom: 1.75rem;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: var(--maroon-hover);
+      gap: 0.65rem;
+    }
+
+    .case-header {
+      padding-bottom: 2rem;
+      margin-bottom: 2.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-category {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--maroon);
+      background: var(--maroon-tint);
+      border: 1px solid rgba(109, 22, 27, 0.16);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    .case-header h1 {
+      font-size: clamp(1.9rem, 3.8vw, 2.75rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .case-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 1.75rem;
+    }
+
+    .case-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+      gap: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.35rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .case-meta-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .case-meta-value {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .case-section {
+      margin-bottom: 2.4rem;
+    }
+
+    .case-section h2 {
+      font-size: 1.38rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.85rem;
+    }
+
+    .case-section p,
+    .case-section li {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      line-height: 1.78;
+      color: #312C27;
+    }
+
+    .case-section p + p {
+      margin-top: 1rem;
+    }
+
+    .case-section ul {
+      margin-top: 0.85rem;
+      padding-left: 1.35rem;
+      display: grid;
+      gap: 0.5rem;
+    }
+
+    .case-callout {
+      background: var(--gold-tint);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--maroon);
+      border-radius: var(--radius-md);
+      padding: 1.35rem 1.5rem;
+      margin: 1.75rem 0;
+    }
+
+    .case-callout-title {
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--maroon);
+      margin-bottom: 0.45rem;
+    }
+
+    .case-callout p {
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .case-figure {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin: 1.75rem 0;
+      box-shadow: var(--shadow-card);
+    }
+
+    .case-figure-placeholder {
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+      padding: 2.75rem 1.5rem;
+      text-align: center;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .case-figure figcaption {
+      margin-top: 0.85rem;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .case-footer-nav {
+      margin-top: 3rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" id="top">
+    <nav class="nav-inner container" aria-label="Primary navigation">
+      <a href="../index.html" class="brand" aria-label="Osama B. Elnezamy home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="../assets/images/design/obe-logo.png" alt="" width="42" height="42" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Osama B. Elnezamy</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="../index.html#projects">← Back to Portfolio</a>
+        <a href="../assets/cv/Osama_Elnezamy_CV.pdf" target="_blank" rel="noopener noreferrer">CV (PDF)</a>
+        <a href="mailto:oysama@gmail.com" class="nav-link-cta">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content" class="case-study-main">
+    <article class="container case-study-shell">
+      <a href="../index.html#projects" class="back-link">
+        <span aria-hidden="true">←</span>
+        <span>All Featured Projects</span>
+      </a>
+
+      <header class="case-header">
+        <span class="case-category">Category Label</span>
+        <h1>Project Case Study Title</h1>
+        <p class="case-subtitle">
+          Concise editorial summary framing the clinical or analytical question, methodology, and measurable impact.
+        </p>
+
+        <div class="case-meta-grid">
+          <div>
+            <span class="case-meta-label">Role</span>
+            <span class="case-meta-value">Lead Analyst / Researcher</span>
+          </div>
+          <div>
+            <span class="case-meta-label">Domain</span>
+            <span class="case-meta-value">Rehabilitation &amp; Data</span>
+          </div>
+          <div>
+            <span class="case-meta-label">Tools &amp; Stack</span>
+            <span class="case-meta-value">SQL · Power BI · R</span>
+          </div>
+          <div>
+            <span class="case-meta-label">Status</span>
+            <span class="case-meta-value">Template Draft</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="case-section">
+        <h2>1. Context &amp; Problem Statement</h2>
+        <p>
+          Describe the clinical, operational, or research challenge being addressed. Keep paragraphs clear,
+          evidence-grounded, and focused on why solving this problem matters for patients or decision-makers.
+        </p>
+      </section>
+
+      <section class="case-section">
+        <h2>2. Methodology &amp; Architecture</h2>
+        <p>
+          Outline data sources, cleaning steps, statistical or screening workflows, and key modeling decisions.
+        </p>
+        <ul>
+          <li>Data preparation, validation, and de-identification safeguards.</li>
+          <li>Analytical model, DAX KPI structure, or PRISMA evidence synthesis workflow.</li>
+          <li>Reproducibility practices and clinical interpretability checks.</li>
+        </ul>
+
+        <figure class="case-figure">
+          <div class="case-figure-placeholder">
+            Insert dashboard screenshot, PRISMA flow diagram, or workflow visual here
+          </div>
+          <figcaption>Figure 1 — Caption summarizing the visual artifact and key takeaway.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>3. Key Outcomes &amp; Clinical Impact</h2>
+        <div class="case-callout">
+          <p class="case-callout-title">Headline Takeaway</p>
+          <p>
+            Summarize the primary quantitative result, clinical insight, or operational improvement delivered by this
+            project.
+          </p>
+        </div>
+        <p>
+          Close with reflections, limitations, and how the framework scales into future rehabilitation or research
+          initiatives.
+        </p>
+      </section>
+
+      <div class="case-footer-nav">
+        <a href="../index.html#projects" class="btn btn-outline">← Back to Portfolio</a>
+        <a
+          href="https://t.me/PT_3nakib"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-telegram"
+        >
+          <span>Follow PT <bdi class="ar-text" lang="ar" dir="rtl">عناكب</bdi></span>
+        </a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        © 2026 Osama B. Elnezamy (O.B.E.) · Hosted on GitHub Pages
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

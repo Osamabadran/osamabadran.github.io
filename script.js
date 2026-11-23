@@ -64,11 +64,8 @@
   function initPortfolioFilters() {
     const filterButtons = Array.from(document.querySelectorAll('.filter-btn'));
     const cards = Array.from(document.querySelectorAll('.project-card'));
-    const countLabel = document.getElementById('project-count');
 
     if (!filterButtons.length || !cards.length) return;
-
-    const totalCount = cards.length;
 
     function applyFilter(category) {
       let visibleCount = 0;
@@ -89,14 +86,6 @@
           card.style.animationDelay = '';
         }
       });
-
-      if (countLabel) {
-        const noun = visibleCount === 1 ? 'featured work' : 'featured works';
-        countLabel.textContent =
-          category === 'all'
-            ? `Showing ${visibleCount} of ${totalCount} ${noun}`
-            : `Showing ${visibleCount} ${noun} in this category`;
-      }
     }
 
     filterButtons.forEach((btn) => {

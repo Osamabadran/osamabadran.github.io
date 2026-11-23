@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Osama Badran (Osama B. Elnezamy · O.B.E.) — Warm Editorial Design System
+   Osama B. Elnezamy (O.B.E.) — Warm Editorial Design System
    ========================================================================== */
 
 :root {
@@ -195,24 +195,16 @@ button {
 
 .brand-text {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   line-height: 1.15;
 }
 
 .brand-name {
-  font-size: 1.02rem;
+  font-size: 1.04rem;
   font-weight: 800;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
+  word-spacing: 0.14em;
   color: var(--ink);
-}
-
-.brand-sub {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 2px;
 }
 
 .nav-links {
@@ -231,22 +223,6 @@ button {
 
 .nav-links a:hover {
   color: var(--maroon);
-}
-
-.nav-link-telegram {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.42rem;
-  padding: 0.36rem 0.78rem;
-  border-radius: 999px;
-  background: var(--maroon-tint);
-  color: var(--maroon) !important;
-  border: 1px solid rgba(109, 22, 27, 0.16);
-}
-
-.nav-link-telegram:hover {
-  background: var(--maroon-tint-strong);
-  border-color: rgba(109, 22, 27, 0.32);
 }
 
 .nav-link-cta {
@@ -301,10 +277,10 @@ button {
   border-bottom: 1px solid var(--border);
 }
 
-/* Masthead: Headline + Compact Seamless Animated O.B.E. Brand Mark */
+/* Masthead: Headline + Seamless Animated O.B.E. Brand Mark */
 .hero-masthead {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 2rem;
   padding-bottom: 2.25rem;
@@ -313,7 +289,7 @@ button {
 }
 
 .hero-masthead-copy {
-  max-width: 780px;
+  max-width: 700px;
   min-width: 0;
 }
 
@@ -350,10 +326,12 @@ button {
   line-height: 1.12;
   letter-spacing: -0.03em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .headline-accent {
   color: var(--maroon);
+  white-space: nowrap;
   background-image: linear-gradient(
     transparent 76%,
     rgba(242, 194, 46, 0.58) 76%,
@@ -380,7 +358,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 156px;
+  width: 270px;
   padding: 0;
   margin: 0;
   border: 0;
@@ -398,8 +376,8 @@ button {
   background: transparent;
   mix-blend-mode: multiply;
   filter: brightness(1.08) contrast(1.06);
-  -webkit-mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 58%, transparent 100%);
-  mask-image: radial-gradient(ellipse 88% 86% at 50% 50%, #000 58%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 96% 94% at 50% 50%, #000 72%, transparent 100%);
+  mask-image: radial-gradient(ellipse 96% 94% at 50% 50%, #000 72%, transparent 100%);
   pointer-events: none;
 }
 
@@ -498,6 +476,9 @@ button {
   font-size: 1.13rem;
   line-height: 1.76;
   color: #312C27;
+  max-width: 58ch;
+  text-wrap: pretty;
+  hyphens: none;
   margin-bottom: 1.15rem;
 }
 
@@ -727,6 +708,7 @@ button {
   line-height: 1.7;
   color: #3A342E;
   max-width: 680px;
+  text-wrap: pretty;
   margin-bottom: 1.15rem;
 }
 
@@ -783,7 +765,7 @@ button {
   justify-content: space-between;
   align-items: flex-end;
   gap: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .section-kicker {
@@ -830,12 +812,6 @@ button {
   background: var(--maroon);
   border-color: var(--maroon);
   color: #FFFFFF;
-}
-
-.project-count {
-  font-size: 0.83rem;
-  color: var(--muted-light);
-  margin-bottom: 1.5rem;
 }
 
 .project-grid {
@@ -917,6 +893,7 @@ button {
   font-size: 0.91rem;
   line-height: 1.65;
   color: var(--muted);
+  text-wrap: pretty;
   margin-bottom: 1.35rem;
 }
 
@@ -1081,7 +1058,7 @@ button {
   }
 
   .obe-motion-trigger {
-    width: 136px;
+    width: 210px;
   }
 
   .profile-spread {
@@ -1097,6 +1074,10 @@ button {
 @media (max-width: 600px) {
   .container {
     padding: 0 1.15rem;
+  }
+
+  .headline-accent {
+    white-space: normal;
   }
 
   .pillars-grid,
